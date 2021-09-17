@@ -1,0 +1,100 @@
+> show dbs;
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+
+> exit
+bye
+
+> db.customer.insert({first_name:"sai",last_name:"ram"});
+WriteResult({ "nInserted" : 1 })
+> db.customer.insert({first_name:"Vishnu",last_name:"G"});
+WriteResult({ "nInserted" : 1 })
+
+> show collections;
+customer
+
+> db.customer.insert({first_name:"John",last_name:"son"},{first_name:"sam",last_name:"sam"});
+WriteResult({ "nInserted" : 1 })
+
+> db.customer.find().pretty();
+{
+        "_id" : ObjectId("6142e427ca6943fd8b7d9264"),
+        "first_name" : "sai",
+        "last_name" : "ram"
+}
+{
+        "_id" : ObjectId("6142e449ca6943fd8b7d9265"),
+        "first_name" : "Vishnu",
+        "last_name" : "G"
+}
+{
+        "_id" : ObjectId("6142e6eaca6943fd8b7d9266"),
+        "first_name" : "John",
+        "last_name" : "son"
+}
+
+> db.customer.insert({first_name:"John",last_name:"son",gender:"Male"},{first_name:"sam",last_name:"sam",gender:"Male"});
+WriteResult({ "nInserted" : 1 })
+> db.customer.find().pretty();
+{
+        "_id" : ObjectId("6142e427ca6943fd8b7d9264"),
+        "first_name" : "sai",
+        "last_name" : "ram"
+}
+{
+        "_id" : ObjectId("6142e449ca6943fd8b7d9265"),
+        "first_name" : "Vishnu",
+        "last_name" : "G"
+}
+{
+        "_id" : ObjectId("6142e6eaca6943fd8b7d9266"),
+        "first_name" : "John",
+        "last_name" : "son"
+}
+{
+        "_id" : ObjectId("6142e983ca6943fd8b7d9267"),
+        "first_name" : "John",
+        "last_name" : "son",
+        "gender" : "Male"
+}
+
+> db.customer.update({first_name:"sai"},{first_name:"sai",last_name:"ram",gender:"Male"});
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.customer.find().pretty();
+{
+        "_id" : ObjectId("6142e427ca6943fd8b7d9264"),
+        "first_name" : "sai",
+        "last_name" : "ram",
+        "gender" : "Male"
+}
+
+> db.customer.update({first_name:"Vishnu"},{$set:{gender:"Female"}});
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+
+> db.customer.update({first_name:"Vishnu"},{$inc:{age:2}});
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.customer.find();
+{ "_id" : ObjectId("6142e427ca6943fd8b7d9264"), "first_name" : "sai", "last_name" : "ram", "gender" : "Male" }
+{ "_id" : ObjectId("6142e449ca6943fd8b7d9265"), "first_name" : "Vishnu", "last_name" : "G", "gender" : "Female", "age" : 22 }
+
+> db.customer.update({first_name:"Vishnu"},{$rename:{"gender":"sex"}});
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.customer.find();
+{ "_id" : ObjectId("6142e427ca6943fd8b7d9264"), "first_name" : "sai", "last_name" : "ram", "gender" : "Male" }
+{ "_id" : ObjectId("6142e449ca6943fd8b7d9265"), "first_name" : "Vishnu", "last_name" : "G", "sex" : "Female" }
+
+> db.customer.update({first_name:"Vishnu"},{$unset:{age}});
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.customer.find();
+{ "_id" : ObjectId("6142e427ca6943fd8b7d9264"), "first_name" : "sai", "last_name" : "ram", "gender" : "Male" }
+{ "_id" : ObjectId("6142e449ca6943fd8b7d9265"), "first_name" : "Vishnu", "last_name" : "G", "gender" : "Female" }
+> db.customer.find();
+{ "_id" : ObjectId("6142e427ca6943fd8b7d9264"), "first_name" : "sai", "last_name" : "ram", "gender" : "Male" }
+{ "_id" : ObjectId("6142e449ca6943fd8b7d9265"), "first_name" : "Vishnu", "last_name" : "G", "gender" : "Female" }
+
+> db.customer.find({gender:"Female"},{_id:0,first_name:1,last_name:1});
+{ "first_name" : "John", "last_name" : "son" }
+
+> db.customer.remove({Age:{$eq:67}});
+WriteResult({ "nRemoved" : 1 })
