@@ -1,0 +1,166 @@
+Inner Join:
+
+Query:
+select e.employee_id,e.first_name,j.job_title,e.job_id from employees e inner join jobs j where e.job_id=j.job_id;
+
+output
+
+206	William	Public Accountant	AC_ACCOUNT
+205	Shelley	Accounting Manager	AC_MGR
+200	Jennifer	Administration Assistant	AD_ASST
+100	Steven	President	AD_PRES
+101	Neena	Administration Vice President	AD_VP
+102	Lex	Administration Vice President	AD_VP
+109	Daniel	Accountant	FI_ACCOUNT
+110	John	Accountant	FI_ACCOUNT
+111	Ismael	Accountant	FI_ACCOUNT
+112	Jose Manuel	Accountant	FI_ACCOUNT
+113	Luis	Accountant	FI_ACCOUNT
+108	Nancy	Finance Manager	FI_MGR
+203	Susan	Human Resources Representative	HR_REP
+103	Alexander	Programmer	IT_PROG
+104	Bruce	Programmer	IT_PROG
+105	David	Programmer	IT_PROG
+106	Valli	Programmer	IT_PROG
+107	Diana	Programmer	IT_PROG
+201	Michael	Marketing Manager	MK_MAN
+202	Pat	Marketing Representative	MK_REP
+204	Hermann	Public Relations Representative	PR_REP
+115	Alexander	Purchasing Clerk	PU_CLERK
+116	Shelli	Purchasing Clerk	PU_CLERK
+117	Sigal	Purchasing Clerk	PU_CLERK
+118	Guy	Purchasing Clerk	PU_CLERK
+119	Karen	Purchasing Clerk	PU_CLERK
+114	Den	Purchasing Manager	PU_MAN
+145	John	Sales Manager	SA_MAN
+146	Karen	Sales Manager	SA_MAN
+147	Alberto	Sales Manager	SA_MAN
+148	Gerald	Sales Manager	SA_MAN
+149	Eleni	Sales Manager	SA_MAN
+150	Peter	Sales Representative	SA_REP
+151	David	Sales Representative	SA_REP
+152	Peter	Sales Representative	SA_REP
+153	Christopher	Sales Representative	SA_REP
+154	Nanette	Sales Representative	SA_REP
+155	Oliver	Sales Representative	SA_REP
+156	Janette	Sales Representative	SA_REP
+157	Patrick	Sales Representative	SA_REP
+158	Allan	Sales Representative	SA_REP
+159	Lindsey	Sales Representative	SA_REP
+160	Louise	Sales Representative	SA_REP
+161	Sarath	Sales Representative	SA_REP
+162	Clara	Sales Representative	SA_REP
+163	Danielle	Sales Representative	SA_REP
+164	Mattea	Sales Representative	SA_REP
+165	David	Sales Representative	SA_REP
+166	Sundar	Sales Representative	SA_REP
+167	Amit	Sales Representative	SA_REP
+168	Lisa	Sales Representative	SA_REP
+169	Harrison	Sales Representative	SA_REP
+170	Tayler	Sales Representative	SA_REP
+171	William	Sales Representative	SA_REP
+172	Elizabeth	Sales Representative	SA_REP
+173	Sundita	Sales Representative	SA_REP
+174	Ellen	Sales Representative	SA_REP
+175	Alyssa	Sales Representative	SA_REP
+176	Jonathon	Sales Representative	SA_REP
+177	Jack	Sales Representative	SA_REP
+178	Kimberely	Sales Representative	SA_REP
+179	Charles	Sales Representative	SA_REP
+180	Winston	Shipping Clerk	SH_CLERK
+181	Jean	Shipping Clerk	SH_CLERK
+182	Martha	Shipping Clerk	SH_CLERK
+183	Girard	Shipping Clerk	SH_CLERK
+184	Nandita	Shipping Clerk	SH_CLERK
+185	Alexis	Shipping Clerk	SH_CLERK
+186	Julia	Shipping Clerk	SH_CLERK
+187	Anthony	Shipping Clerk	SH_CLERK
+188	Kelly	Shipping Clerk	SH_CLERK
+189	Jennifer	Shipping Clerk	SH_CLERK
+190	Timothy	Shipping Clerk	SH_CLERK
+191	Randall	Shipping Clerk	SH_CLERK
+192	Sarah	Shipping Clerk	SH_CLERK
+193	Britney	Shipping Clerk	SH_CLERK
+194	Samuel	Shipping Clerk	SH_CLERK
+195	Vance	Shipping Clerk	SH_CLERK
+196	Alana	Shipping Clerk	SH_CLERK
+197	Kevin	Shipping Clerk	SH_CLERK
+198	Donald	Shipping Clerk	SH_CLERK
+199	Douglas	Shipping Clerk	SH_CLERK
+125	Julia	Stock Clerk	ST_CLERK
+126	Irene	Stock Clerk	ST_CLERK
+127	James	Stock Clerk	ST_CLERK
+128	Steven	Stock Clerk	ST_CLERK
+129	Laura	Stock Clerk	ST_CLERK
+130	Mozhe	Stock Clerk	ST_CLERK
+131	James	Stock Clerk	ST_CLERK
+132	TJ	Stock Clerk	ST_CLERK
+133	Jason	Stock Clerk	ST_CLERK
+134	Michael	Stock Clerk	ST_CLERK
+135	Ki	Stock Clerk	ST_CLERK
+136	Hazel	Stock Clerk	ST_CLERK
+137	Renske	Stock Clerk	ST_CLERK
+138	Stephen	Stock Clerk	ST_CLERK
+139	John	Stock Clerk	ST_CLERK
+140	Joshua	Stock Clerk	ST_CLERK
+141	Trenna	Stock Clerk	ST_CLERK
+142	Curtis	Stock Clerk	ST_CLERK
+143	Randall	Stock Clerk	ST_CLERK
+144	Peter	Stock Clerk	ST_CLERK
+120	Matthew	Stock Manager	ST_MAN
+121	Adam	Stock Manager	ST_MAN
+122	Payam	Stock Manager	ST_MAN
+123	Shanta	Stock Manager	ST_MAN
+124	Kevin	Stock Manager	ST_MAN
+----------------------------------------------------------------------------------------------
+Right Join:
+
+Queries:
+select * from employees;
+
+select * from departments;
+
+select * from jobs;
+
+select * from job_history;
+
+
+
+select concat(employees.first_name,employees.last_name) as Name ,employees.salary, departments.department_name, departments.department_id from employees
+
+right join departments on employees.department_id = departments.department_id;
+
+order by employees.first_name asc;
+
+
+
+select max(department_id) from employees;
+
+select * from employees where department_id> '110';
+
+
+
+select job_history.employee_id, jobs.job_title, job_history.start_date, job_history.end_date, jobs.max_salary from jobs
+
+right join job_history on jobs.job_id = job_history.job_id
+order by jobs.max_salary desc;
+------------------------------------------------------------------------------------------------------------------------------------------
+LEFT(OUTER) JOIN:
+Left join returns all records from the left table and matched records from the right table.
+The result from the right table is NULL if there is no match to the left table record.
+
+Query:
+select employees.first_name, employees.last_name, department.manager_id from employees 
+	left join departments on employees.manager_id = department.manager_id;
+------------------------------------------------------------------------------------------------------------------------------------
+Cross Join:
+
+The CROSS JOIN is used to generate a paired combination of each row of the first table with each row of the second table.
+This join type is also known as cartesian join.
+
+Queries:
+select employee_id, first_name, last_name, d.department_id from employees
+	cross join departments d;
+
+select count(*) from employees
+	cross join jobs;
