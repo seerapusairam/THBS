@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OnMouse</title>
+  <style type="text/css">
+    div{
+        width : 200px;
+        height : 100px;
+        border:2px solid black;
+        background-color:yellow;
+
+  </style>
+</head>
+<body>
+<div id="div" onmouseover="fun1()" onmouseout="fun2()">
+
+<center>welcome to mouse</center>
+</div>
+<p id="demo"></p>
+<script>
+
+    function fun1(){
+           document.getElementById("demo").innerHTML="Mouse moved in";
+
+    }
+
+    function fun2(){
+           document.getElementById("demo").innerHTML="Mouse moved out";
+
+    }
+
+
+</script>
+</body>
+</html>
