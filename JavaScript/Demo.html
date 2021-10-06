@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript</title>
+    <script type="text/javascript" src="add.js"></script>
+</head>
+<body>
+<p id="demo"></p>
+
+<script type="text/javascript">
+
+document.getElementById("demo").innerHTML = "Welcome to Javascript";
+
+var st1 = "welcome";
+var st2 = "to JS";
+document.write(st1+" "+st2);
+
+alert(10+20);
+sum+=(Number)(a);
+
+varra = prompt("Enter 1st number : ");
+    var b = prompt("Enter 2nd number : ");
+    var sum = 0;
+    sum = parseInt(a)+parseInt(b);
+    alert(sum);
+    var res=0;
+    for(let i=1;i<=3;i++)
+    {
+    res+=(Number)(prompt("Enter number","0"));
+    }
+    alert(res);
+    
+//data types
+<!--numbers-->
+<!--String-->
+<!--objects-->
+<!--boolean-->
+<!--function-->
+    
+    var  num1 =150;
+    var num2= 200;
+    if(num1>num2)
+        document.write(num1+"is largest number");
+    else
+        document.write(num2+"is largest number");
+
+    varnum1 =150;
+    var num2= 200;
+    var num3=300;
+    var lar = (((num1>num2)&&(num1>num3)) ? num1:((num2>num1)&&(num2>num3)) ? num2:num3)
+    document.write(lar);
+
+    var city ="Ban";
+    switch(city)
+    {
+    case "Ban": document.write("Very city");
+                break;
+    case "che": document.write("very hot");
+                break;
+     }
+
+      let x;
+    x=5
+    x="jack"
+    x='sai'
+    x='jack and "jill"'
+    document.write(x+"<br>");
+    document.write();
+   let n1=52.5;
+   let n2=23.4
+   document.write(n1==n2);
+
+   const city=["ban","hyd","clx","bza"];
+   document.write("<br>"+city[1]);
+
+   var carr=[{type:"bmw",model:"500",color:"red"},{type:"alto",model:"507",color:"white"},{type:"bmw",model:"100",color:"yellow"}];
+
+    for(let k=0;k<carr.length;k++)
+    {
+    document.write(arr[k].model+"<br>");
+    }
+    
+</script>
+</body>
+</html>
