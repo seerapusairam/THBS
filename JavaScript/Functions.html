@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Function with multiple args</title>
+</head>
+<body>
+<p id="res1"></p>
+<p id="res2"></p>
+<p id="res3"></p>
+<p id="res4"></p>
+<script>
+    function myf(x,y)
+    {
+        return x*y;
+    }
+    function myf1(x,y=2)
+    {
+        return x*y;
+    }
+    function Max()
+    {
+        let max=0;
+        for(let i=0;i<=arguments.length;i++)
+        {
+            if(max<arguments[i])
+             max=arguments[i];
+        }
+        return max;
+    }
+    function Min()
+    {
+        let min=0;
+        for(let i=0;i<=arguments.length;i++)
+        {
+            if(min>arguments[i])
+             min=arguments[i];
+        }
+        return min;
+    }
+    document.getElementById("res1").innerHTML = myf1(5);
+    document.getElementById("res2").innerHTML = myf(5,5);
+    document.getElementById("res3").innerHTML = Max(5,21,423,54,2131);
+    document.getElementById("res4").innerHTML = Min(5,21,423,54,2131);
+</script>
+</body>
+</html>
