@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form  name="lform" action="form.html" onsubmit=" return validateForm()">
+    <input type="text" placeholder="username" id="uname" name="uname" >
+    <br><br>
+    <input type="password" id="pass" name="pass" >
+    <input type="submit" value="submit">
+</form>
+<script>
+    function validateForm(){
+
+        var uname = document.lform.uname.value;
+        var pass = document.lform.pass.value;
+
+        if(uname==null || pass==null ||uname=="" || pass==""){
+        alert("enter the credentials");
+        return false;
+        }
+    }
+</script>
+</body>
+</html>
+
+<!----------Welcome-------->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>welcome all</h1>
+</body>
+</html>
