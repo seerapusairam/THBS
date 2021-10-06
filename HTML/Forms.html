@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Forms</title>
+</head>
+<body>
+	<center>
+		<form><!--Input text --->
+			<label>First name</label><br>
+			<input type="text" id="fname" name="fname" value="Sai"><br>
+			<label>Last name:</label><br>
+			<input type="text" id="lname" name="lname" value="Ram"><br>
+			<br><!--Submit button --->
+			<input type="submit" name="Submit" value="Submit">
+
+			<hr>
+			<!--Radio button--->
+			<label>Radio Button</label><br>
+			<input type="Radio" id="1" name="button" >
+			<label>1</label><br>
+			<input type="Radio" id="2" name="button" >
+			<label>2</label><br>
+			<input type="Radio" id="3" name="button" >
+			<label>3</label><br>
+
+			<hr>
+			<!--Check box--->
+			<label>Check Box</label><br>
+			<input type="checkbox" id="1" name="button" >
+			<label>1</label><br>
+			<input type="checkbox" id="2" name="button" >
+			<label>2</label><br>
+			<input type="checkbox" id="3" name="button" >
+			<label>3</label><br>
+
+			<hr>
+
+		</form>
+		<!--Action--->
+		<form action="/action_page.php">
+			<label >Action </label><br><br>
+			<input type="text" id="Age" name="Age" placeholder="Enter your age"><br><br>
+			<input type="submit" value="Submit">
+		</form>
+		<hr>
+		<label>Target</label>
+		<form action="sec.html" target="_blank"><br>
+			<input type="submit" name="Blank" value="_blank">
+		</form>
+		<form action="sec.html" target="_self"><br>
+			<input type="submit" value="_self">
+		</form>
+		<form action="sec.html" target="_parent"><br>
+			<input type="submit" value="_parent">
+		</form>
+		<form action="sec.html" target="_top"><br>
+			<input type="submit" value="_top">
+		</form>
+		<form action="sec.html" target="framename"><br>
+			<input type="submit" value="framename">
+		</form>
+		<hr>
+
+		<form action="/action_page.php" method="get">
+			<label for="fname">GET Method</label><br><br>
+			<input type="text" id="number" name="number" value="123456789"><br><br>
+			<input type="submit" value="Submit">
+		</form>
+		<br>
+		<form action="/action_page.php" method="post">
+			<label for="fname">POST Method</label><br><br>
+			<input type="text" id="number" name="number" value="123456789"><br><br>
+			<input type="submit" value="Submit">
+		</form>
+
+		<hr>
+		<label>Autocomplete</label><br><br>
+		<form autocomplete="on">
+			<label>First name</label><br>
+			<input type="text" id="fname" name="fname"><br><br>
+		</form>
+		<form autocomplete="off">
+			<label>Last name:</label><br>
+			<input type="text" id="lname" name="lname"><br>
+		</form>
+		<hr>
+		<form>
+			<label for="fname">Validate</label><br><br>
+			<input type="text" placeholder="Enter your age" required=""><br><br>
+			<input type="submit" value="Submit">
+		</form><br>
+		<form novalidate>
+			<label for="fname">NO Validate</label><br><br>
+			<input type="text" placeholder="Enter your age" required=""><br><br>
+			<input type="submit" value="Submit">
+		</form>
+
+		<hr><!--SELECT ELEMENT--->
+		<form action="/action_page.php">
+			<label>Select </label><br>
+			<select id="Pinfo" name="Pinfo" size="4" multiple>
+				<option value="Name">Name</option>
+				<option value="Age" selected>Age</option>
+				<option value="Place">Place</option>
+				<option value="Number">number</option>
+			</select><br><br>
+			<input type="submit">
+			<br>
+		</form>
+		<hr>
+		<form>
+			<!--Textarea ELEMENT--->
+			<label>TextArea</label><br>
+			<textarea name="message" rows="10" cols="30">HI this is textarea</textarea><br>
+			<hr>
+			<br>
+			<!--Button--->
+			<label>Button</label><br><br>
+			<button type="button" onclick="alert('Hello World!')">Click Me!</button>
+			<br><br>
+			<hr>
+			<!--<fieldset> and <legend> --->
+			<label>Fieldset</label><br>
+			<form action="/action_page.php">
+				<fieldset>
+					<legend>Details:</legend>
+					<label >First name</label><br>
+					<input type="text"  name="fname"><br>
+					<label >Last name</label><br>
+					<input type="text" name="lname" ><br><br>
+					<input type="submit" value="Submit">
+				</fieldset>
+			</form>
+			<br><hr>
+		</form><br>
+		<label>Datalist</label>
+		<label>Browsers</label><br><br> 	 	
+		<form >
+			<input list="browsers">
+			<datalist id="browsers">
+				<option value="Internet Explorer">
+					<option value="Firefox">
+						<option value="Chrome">
+							<option value="Opera">
+								<option value="Safari">
+			</datalist>
+		<br></form>
+		<br></center>
+	</body>
+	</html>
