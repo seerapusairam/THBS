@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TypeConvention</title>
+</head>
+<body>
+<script type="text/javascript">
+let y = '5';
+document.write(typeof y+" value of y :"+y+"<br>");
+let x=+y;
+document.write(typeof y+" value of y :"+y+"<br>");
+document.write(typeof x+" value of x :"+x+"<br>");
+
+let a=333;
+document.write(typeof a+" value of a :"+a+"<br>");
+let b = String(a);
+document.write(typeof b+" value of b :"+b+"<br>");
+document.write((20+23).toString()+"<br>");
+
+//encoding
+var url = "index1.html?fname=Mythili&lname=G&pword=1234";
+var encurl= encodeURIComponent(url)
+document.write(encurl);
+//decoding
+var decodeurl = decodeURIComponent(encurl);
+document.write(decodeurl);
+
+</script>
+</body>
+</html>
