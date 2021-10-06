@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>First Name</h3>
+<p id="firstName">Name</p>
+
+
+
+<label>Session</label>
+<p id="result">0 times</p>
+
+<label>Local</label>
+<p id="result1">0 times</p>
+<!--<input type="button" value="button" >-->
+
+
+<!--    check if storage exists-->
+<script type="text/javascript" src = "/src/main/webapp/store.js">
+
+
+
+
+</script>
+</body>
+
+</html>
+
+//script
+if (typeof(Storage) !== "undefined") {
+
+// localStorage.setItem("firstName", "Vishwas");
+//// localStorage.setItem("firstName","rohith");
+//// localStorage.removeItem("firstName");
+//
+// // Retrieve
+//// document.getElementById("firstName").innerHTML = localStorage.getItem("firstName");
+//
+// document.getElementById("firstName").innerHTML = localStorage.firstName;
+
+
+if (localStorage.refreshCount) {
+  localStorage.refreshCount = Number(localStorage.refreshCount) + 1;
+} else {
+  localStorage.refreshCount = 1;
+}
+document.getElementById("result1").innerHTML = "You have refreshed the page " +
+localStorage.refreshCount + " time(s).";
+
+
+
+
+if (sessionStorage.clickcount) {
+  sessionStorage.clickcount = Number(sessionStorage.clickcount) + 1;
+} else {
+  sessionStorage.clickcount = 1;
+}
+
+
+document.getElementById("result").innerHTML = "You have refreshed this page " +
+sessionStorage.clickcount + " time(s) in this session.";
+
+
+
+    } else {
+
+    }
