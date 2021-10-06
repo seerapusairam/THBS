@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS selectors</title>
+    <link rel="stylesheet" href="/src/main/webapp/style.css">
+</head>
+<body>
+
+<p id="para">this is the first para.</p>
+<h1 class="header">header 1</h1>
+<h2 class="header">header 2</h2>
+<h3 class="header">header 3</h3>
+
+<footer><a href="http://www.google.com">copyright 2021</a></footer>
+
+
+
+</body>
+</html>
+
+//css
+
+#para{
+ letter-spacing : 1em;
+}
+
+.header{
+    font-weight:normal;
+}
+
+footer{
+color : blue;
+}
+
+*{
+padding: 10px;
+}
