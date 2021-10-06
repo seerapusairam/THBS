@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JSarrays</title>
+    <script type="text/javascript">
+        myArray = new Array("Wind","Air","Fire","Water","Sky");
+
+        document.write(myArray+"<br>");
+
+        //for each
+        for(i in myArray)
+        {
+        document.write("Array element is "+myArray[i]+"<br>");
+        }
+
+        //join : join all the element into a string
+        document.write(myArray.join()+"<br>");
+
+        //concat: meragering two arrays
+        uarray = new Array("Earth");
+        document.write(myArray.concat(uarray)+"<br>");
+
+        //pop : remove the last element of the array and return it
+        document.write(myArray.pop()+"<br>");
+
+        //shift : remove the first element of the array and return it
+        document.write(myArray.shift()+"<br>");
+
+        //unshift :
+        document.write(myArray.unshift("Ocean","Strom")+"<br>");
+
+        for(i in myArray)
+        {
+        document.write("Array element is "+myArray[i]+"<br>");
+        }
+
+        //sort : sort in ascd and return array
+        document.write(myArray.sort()+"<br>");
+
+        //reverse
+        document.write(myArray.reverse()+"<br>");
+
+        //slice: extract sub array from array
+
+        subarray = myArray.slice(1,3);
+        //it will get 1,2 index only 3 is not included
+        document.write(subarray+"<br>");
+
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>
