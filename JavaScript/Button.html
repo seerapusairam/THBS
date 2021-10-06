@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JSFunction Button</title>
+</head>
+<body>
+Enter n1 : <input type="text" id="n1" value="0"><br><br>
+Enter n2 : <input type="text" id="n2" value="0">
+
+<button type="button" id="button1"  onclick="sum()">+</button>
+<button type="button" id="button2"  onclick="sub()">-</button>
+<button type="button" id="button3"  onclick="div()">/</button>
+<h2 id="result"></h2>
+<h2 id="result1"></h2>
+<h2 id="result2"></h2>
+<script>
+    function sum()
+    {
+    var n1 = document.getElementById("n1").value;
+    var n2 = document.getElementById("n2").value;
+    let sum = parseInt(n1)+parseInt(n2);
+    document.getElementById("result").innerHTML=+sum;
+    }
+
+    function sub()
+    {
+    var n1 = document.getElementById("n1").value;
+    var n2 = document.getElementById("n2").value;
+    let sum = parseInt(n1)-parseInt(n2);
+    document.getElementById("result1").innerHTML=+sum;
+    }
+
+    function div()
+    {
+    var n1 = document.getElementById("n1").value;
+    var n2 = document.getElementById("n2").value;
+    let sum = parseInt(n1)/parseInt(n2);
+    document.getElementById("result2").innerHTML=+sum;
+    }
+
+</script>
+</body>
+</html>
