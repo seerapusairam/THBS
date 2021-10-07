@@ -1,0 +1,52 @@
+<div>
+Here is <span>a span element</span> which is blue, as span elements are set to be.
+</div><div class="extra" style="color:green">
+Here is <span>a span element</span> which is green, because it inherits from its parent.
+</div><div style="color:red">
+Here is <span>a span element</span> which is blue, as span elements are set to be.
+</div></body>
+</html>
+--------------------------------------------------------------------------------------------------------------------------------------
+2.initial
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+div {
+color: red;
+border: 1px solid blue;
+}h1 {
+color: initial;
+}
+</style>
+</head>
+<body><div>
+<h1>Initial</h1>
+<p>The header above and this paragraph is inside a DIV element, The DIV element has the color property set to "red". The header element has its color property set to "initial", which in this case is "black".</p>
+</div><p><b>Note:</b> The "initial" keyword is not supported in Internet Explorer 11 and earlier versions, or in Opera 15 and earlier versions.</p></body>
+</html>
+--------------------------------------------------------------------------------------------------------------------------------------3.
+<p>This text is red.</p>
+<div class="foo">
+<p>This text is also red.</p>
+</div>
+<div class="bar">
+<p>This text is green (default inherited value).</p>
+</div>.foo {
+color: blue;
+}
+.bar {
+color: green;
+}p {
+color: red;
+}
+.bar p {
+color: unset;
+}-----------------------------------------------------------------------------------------------------------------------------------------
+4.h3 {
+font-weight: normal;
+color: blue;
+}<h3 style="font-weight: unset; color: unset;">This will still have font-weight: normal, but color: black</h3>
+<p>Just some text</p>
+<h3 style="font-weight: revert; color: revert;">This should have its original font-weight (bold) and color: black</h3>
+<p>Just some text</p>
