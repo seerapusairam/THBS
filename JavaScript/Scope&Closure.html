@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Closure</title>
+</head>
+<body>
+
+<script>
+
+    let a=10;//global scope
+    fun1();
+    function fun1()
+    {
+    let a = 12; //local scope ---> if it was declare with 'let' then the value will be within the scope/fun
+    document.write(a*a+"<br>");
+    }
+document.write(a*a);
+
+</script>
+
+</body>
+</html>
