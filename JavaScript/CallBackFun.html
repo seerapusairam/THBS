@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>callbackfunction</title>
+</head>
+<body>
+<p id="demo"></p>
+</body>
+<script>
+    var s="";
+    function fun1(sai)
+    {
+
+       s = s+"  "+sai+"<br>";
+      document.getElementById("demo").innerHTML = s;
+    }
+
+    function Max(n1,n2,myCallback)
+    {
+      let max=0;
+       if (n1>n2)
+         max= n1;
+         else
+         max = n2;
+
+         myCallback(max);
+    }
+    function add(n1,n2,myCallback)
+    {
+     let sum  = n1+n2;
+      myCallback(sum);
+     }
+    // sequence will be according to function call
+    Max(15,5,fun1);
+    add(100,50,fun1);
+
+</script>
+</html>
+
+
+
