@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>callback_button</title>
+</head>
+<body>
+
+</body>
+<input type="text" id="n1" value="0"><br><br>
+<input type="text" id="n2" value="0"><br><br>
+<button type="button" onclick="PrintMax()">Print Max</button>
+<button type="button" onclick="Printsum()">Print Sum</button>
+<p id="demo"></p>
+<script>
+
+
+    var s="";
+    function fun1(sai)
+    {
+
+       s = s+"  "+sai+"<br>";
+      document.getElementById("demo").innerHTML = s;
+    }
+
+    function Max(n1,n2,myCallback)
+    {
+      let max=0;
+       if (n1>n2)
+         max= n1;
+         else
+         max = n2;
+
+       myCallback(max);
+    }
+
+    function PrintMax(){
+    var n1 = parseInt(document.getElementById("n1").value);
+    var n2 = parseInt(document.getElementById("n2").value)
+    Max(n1,n2,fun1)
+    }
+
+    function Printsum(){
+    var n1 = parseInt(document.getElementById("n1").value);
+    var n2 = parseInt(document.getElementById("n2").value)
+    add(n1,n2,fun1)
+    }
+
+    function add(n1,n2,myCallback)
+    {
+     let sum  = n1+n2;
+      myCallback(sum);
+     }
+
+</script>
+</html>
