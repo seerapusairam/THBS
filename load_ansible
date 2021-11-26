@@ -1,0 +1,20 @@
+To create first playbook and execute it
+##############################################
+[student@workstation playbooks]$ cat first.yaml
+- name: my first playbook
+hosts: all
+become: true
+tasks:
+- name: install the package
+yum:
+name: httpd
+state: present
+
+
+- name: install second package
+yum:
+name: vsftpd
+state: present
+
+[student@workstation playbooks]$ ansible-playbook --syntax-check first.yaml
+[student@workstation playbooks]$ ansible-playbook first.yaml
