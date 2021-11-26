@@ -18,3 +18,16 @@ state: present
 
 [student@workstation playbooks]$ ansible-playbook --syntax-check first.yaml
 [student@workstation playbooks]$ ansible-playbook first.yaml
+-------------------------------------------
+
+- name: Shell Command
+hosts: all
+tasks:
+
+- name: Check Date with Shell command
+shell:
+"date"
+register: datecmd
+tags: datecmd
+
+- debug: msg="{{datecmd.stdout}}"
