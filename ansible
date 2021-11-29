@@ -41,3 +41,15 @@ tags: datecmd
       file:
 	 name: test1237
 	 state: directory
+-----------------------------------------------------
+git clone
+
+- name: git cloning
+  hosts: all
+  tasks: 
+   - name: cloning repo
+     git:
+       repo: https://github.com/seerapusairam/git_demo.git
+       dest: /home/sai/repos/
+       clone: yes
+       update: yes   
