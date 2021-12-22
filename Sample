@@ -24,3 +24,15 @@ db.product_catalog.insert ( [
         colors: ["silver","black","gold","rosegold"]
     }
 ] )
+
+
+db.product_catalog.insert (
+{
+prodid:7000010,
+prodname:"nosql distilled",
+publisher:"Addison-Wesley",
+genre: {academic: "technical"},
+ISBN:1234567,
+price:400
+}
+)
