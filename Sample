@@ -3,3 +3,10 @@ db.product_catalog.updateMany(
       { $set: { "prodname" : "iphone 7 plus" } },
       { upsert: true }
 )
+
+userId: 'amy01',
+Name: 'Amy James',
+Gender: 'Female',
+Location: 'India',
+Age: 19,
+University: 'Delhi'
