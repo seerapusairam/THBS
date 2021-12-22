@@ -1,43 +1,5 @@
-db.product_catalog.insert ( [
-    {
-        prodid:7000012,
-        prodname:"Java for Dummies",
-        publisher:"John Wiley",
-        genre: {academic: "technical"},
-        ISBN:18407806,
-        price:400
-    },
-    {
-        prodid:7000013,
-        prodname:"Big Data: Principles and Best Practices",
-        publisher:"Dreamtech",
-        genre: {academic: "technical"},
-        price:700
-    },
-    {
-        prodid: 7000001,
-        prodname: "iphone 7",
-        manufacturer: "apple",
-        categories: {main:"electronics",sub:"smartphones"},
-        year_of_launch: 2017,
-        price: 60000,
-        colors: ["silver","black","gold","rosegold"]
-    }
-] )
-
-
-db.product_catalog.insert (
-{
-prodid:7000010,
-prodname:"nosql distilled",
-publisher:"Addison-Wesley",
-genre: {academic: "technical"},
-ISBN:1234567,
-price:400
-}
+db.product_catalog.updateMany(
+      { "price" : { $gt : 80000 }, "manufacturer" : "apple" },
+      { $set: { "prodname" : "iphone 7 plus" } },
+      { upsert: true }
 )
-
-prodname: 'nosql distilled'
-
-db.product_catalog.find({"categories.main":{ $ne: "electronics"}})
-
