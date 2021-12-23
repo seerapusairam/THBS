@@ -35,3 +35,9 @@ db.product_catalog.insert([
 { "manufacturer" : "honor", "price" : 18000, "battery" : 3340, "model" : '9i' , "categories": {'main':'electronics', 'sub': 'smartphones'}},
 { "manufacturer" : "google", "price" : 45000, "android" : 'Oreo', "model" : 'Pixel 2', "categories": {'main':'electronics', 'sub': 'smartphones'} }
 ])
+
+
+db.product_catalog.aggregate( [
+    { $project: { _id: 0, manufacturer: 1, price: 1 } },
+    { $group: { _id: "$manufacturer", totalPrice: { $sum: "$price" } } }
+] )
