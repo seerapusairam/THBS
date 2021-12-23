@@ -53,3 +53,8 @@ db.product_catalog.find(
 for (var i = 1; i <= 50; i++) {
    db.js_tryout.insert( { _id : i } )
 }
+
+var data = db.js_tryout.find({_id: {$gte: 5, $lte:15}}).toArray()
+for (var i=0; i < data.length; i++){
+print("The ID is "+ data[i]._id)
+}
