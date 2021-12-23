@@ -10,3 +10,5 @@ Gender: 'Female',
 Location: 'India',
 Age: 19,
 University: 'Delhi'
+
+db.user_profiles.deleteOne({_id: ObjectId("61c3f348e14e12b129e7b5de")})
