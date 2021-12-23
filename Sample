@@ -37,3 +37,10 @@ db.product_catalog.insert([
 ])
 
 db.product_catalog.aggregate({$match:{$and: [{manufacturer:"lenovo"}, {price:10000}]}})
+
+Example:
+db.product_catalog.aggregate( [
+    { $sort : { price: 1 } },
+    { $limit: 5},
+    { $out: "FiveCheapestMobiles"}
+] )
