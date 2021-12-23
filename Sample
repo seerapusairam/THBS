@@ -48,3 +48,8 @@ db.product_catalog.aggregate( [
 db.product_catalog.find(
     { price: { $gte: 5000, $lte: 20000 } }
 ).explain("executionStats")
+
+
+for (var i = 1; i <= 50; i++) {
+   db.js_tryout.insert( { _id : i } )
+}
