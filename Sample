@@ -44,3 +44,7 @@ db.product_catalog.aggregate( [
     { $limit: 5},
     { $out: "FiveCheapestMobiles"}
 ] )
+
+db.product_catalog.find(
+    { price: { $gte: 5000, $lte: 20000 } }
+).explain("executionStats")
